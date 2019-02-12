@@ -1,0 +1,8 @@
+numpy
+h5py
+matplotlib
+pandas
+scipy
+scikit-learn
+scikit-image
+tqdm

@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+setup.py
+deltascope/__init__.py
+deltascope/alignment.py
+deltascope/mpTransformation.py
+deltascope/new.py
+deltascope/process_after_gui.py
+deltascope/test_transform.py
+deltascope.egg-info/PKG-INFO
+deltascope.egg-info/SOURCES.txt
+deltascope.egg-info/dependency_links.txt
+deltascope.egg-info/requires.txt
+deltascope.egg-info/top_level.txt
