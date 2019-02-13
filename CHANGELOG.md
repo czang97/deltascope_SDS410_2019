@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.2.6] - 2019-02-11
+### Changes
+- Restore read the docs build functionality for autodocs
+
+## [0.2.5] - 2019-02-11
+### Additions
+- Created template notebooks in the experiments directory
+
 ## [0.2.4] - 2018-08-23
 ### Changes
 - Add sys path to sphinx conf file
