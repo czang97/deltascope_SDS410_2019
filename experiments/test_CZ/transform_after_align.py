@@ -8,7 +8,7 @@ import multiprocessing as mp
 import pandas as pd
 from functools import partial
 
-outdirs = ['Output_01-04-14-43']
+outdirs = ['Output_02-18-08-22']
 deg = 2
 fit_dim = ['x','z']
 
