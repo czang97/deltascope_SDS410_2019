@@ -37,7 +37,7 @@ env-cranium
 shell_output
 build/
 data/
-experiments/.DS_Store
+experiments/data_split/.DS_Store
 
 # Experiment folders
 experiments
