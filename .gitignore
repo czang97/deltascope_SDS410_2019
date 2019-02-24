@@ -36,6 +36,7 @@ docs/build/
 env-cranium
 shell_output
 build/
+data/
 
 # Experiment folders
 experiments
