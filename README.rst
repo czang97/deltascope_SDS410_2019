@@ -20,19 +20,21 @@ Package hosted on `PyPI <https://pypi.python.org/pypi/deltascope>`_. ::
 
 Setting directories
 ++++++++++++++++++++
+
 - For windows users, please use backslashes (e.g., `os.path.abspath(.\SampleNum)`).
 - For mac users, please use normal slashes (e.g., `os.path.abspath(./SampleNum)`).
 	
 Reading in the data
 ++++++++++++++++++++
+
 - For personal laptops, please try limiting the maximum amount of data being read in under 10 paired samples (so 20 samples in total). 
 - It will take approximately 30 seconds per sample.
 
 Alignment
 ++++++++++
-![Types of alignment] (https://github.com/czang97/deltascope_SDS410_2019/blob/master/experiments/testvideo/Screen%20Shot%202019-03-12%20at%2012.12.34%20PM.png)
 
-
+![Types of alignment](experiments/testvideo/alignments.png)
+      
 Support
 ++++++++
 
