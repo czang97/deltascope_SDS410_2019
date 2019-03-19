@@ -14,7 +14,7 @@ Features
 Installation
 ------
 
-Package hosted on `PyPI <https://pypi.python.org/pypi/deltascope>`_. ::
+Package hosted on [PyPI](https://pypi.python.org/pypi/deltascope)
 
 	$ pip install deltascope: try running `pip install -e` from the root of the deltascope directory.
 
