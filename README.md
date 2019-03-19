@@ -49,7 +49,7 @@ Support
 ------
 
 - Complete documentation is available on [Read the Docs](http://deltascope.readthedocs.io/en/latest/).
-- Check out the [Frequently Asked Question <faq>] page.
+- Check out the [Frequently Asked Question <faq>]() page.
 - Submit an issue describing a problem or question on the project's Github [Issue Tracker](http://github.com/msschwartz21/deltascope/issues).
 
 Contribute
