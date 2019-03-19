@@ -48,9 +48,9 @@ Alignment
 Support
 ------
 
-- Complete documentation is available on `Read the Docs <http://deltascope.readthedocs.io/en/latest/>`_.
-- Check out the `Frequently Asked Question <faq>`_ page.
-- Submit an issue describing a problem or question on the project's Github `issue tracker <https://github.com/msschwartz21/deltascope/issues>`_.
+- Complete documentation is available on [Read the Docs](http://deltascope.readthedocs.io/en/latest/).
+- Check out the [Frequently Asked Question <faq>] page.
+- Submit an issue describing a problem or question on the project's Github [issue tracker] (https://github.com/msschwartz21/deltascope/issues).
 
 Contribute
 ------
