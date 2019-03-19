@@ -43,7 +43,7 @@ Alignment
 
 - Four alignment correction options: dotted line is where we want the commissure to be, and solid line is where the commissure in the actual sample is.
 
-![Types of alignment](experiments/testvideo/alignments.png)
+![Types of alignment](https://github.com/czang97/deltascope_SDS410_2019/blob/master/experiments/testvideo/alignments.png)
       
 Support
 ++++++++
