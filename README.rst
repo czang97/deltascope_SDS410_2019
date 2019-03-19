@@ -22,6 +22,7 @@ Setting up
 +++++++++++
 
 - Download Anaconda and launch JupyterLab, then interface with the `experiments` folder.
+- Dependencies: download all the packages mentioned in `requirements.txt`.
 - Set the kernel to be `deltascope`.
 - Parameters: Wild-Type sample has radius 20; You-Too sample has radius 10.
 
@@ -31,6 +32,7 @@ Setting directories
 - For windows users, please use backslashes (e.g., `os.path.abspath(.\SampleNum)`).
 - For mac users, please use normal slashes (e.g., `os.path.abspath(./SampleNum)`).
 - `gfap` corresponds to You-Too data whereas `at` corresponds to Wild-Type data.
+- Remember to specify where the output would be saved. Typically, `root = os.path.abspath('.')` would work.
 
 Reading in the data
 ++++++++++++++++++++
@@ -43,7 +45,7 @@ Alignment
 
 - Four alignment correction options: dotted line is where we want the commissure to be, and solid line is where the commissure in the actual sample is.
 
-![Types of alignment](/experiments/alignments.png)
+![Types of alignment](../experiments/alignments.png)
 
 Support
 ++++++++
