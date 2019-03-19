@@ -45,7 +45,9 @@ Alignment
 
 - Four alignment correction options: dotted line is where we want the commissure to be, and solid line is where the commissure in the actual sample is.
 
-![Types of alignment](../experiments/alignments.png)
+.. image:: /experiments/alignments.png
+  :width: 400
+  :alt: Alternative text
 
 Support
 ++++++++
