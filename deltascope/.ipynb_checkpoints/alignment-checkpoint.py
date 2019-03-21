@@ -54,12 +54,12 @@ def plot_lines(ax,i):
     :param int i: Index of row that should be labeled
     '''
 
-#     ax[i,0].axhline(0,c='y')
-#     ax[i,0].axvline(0,c='r')
+    ax[i,0].axhline(0,c='y')
+    ax[i,0].axvline(0,c='r')
     ax[i,1].axhline(0,c='y')
     ax[i,1].axvline(0,c='c')
-#     ax[i,2].axhline(0,c='c')
-#     ax[i,2].axvline(0,c='r')
+    ax[i,2].axhline(0,c='c')
+    ax[i,2].axvline(0,c='r')
 
 def scatter_df(ax,i,df):
     '''
@@ -70,9 +70,9 @@ def scatter_df(ax,i,df):
     :param pd.DataFrame df: Dataframe containing 'x','y','z' columns preferably downsampled for faster plotting
     '''
 
-#     ax[i,0].scatter(df.x,df.y,s=10)
+    ax[i,0].scatter(df.x,df.y,s=10)
     ax[i,1].scatter(df.x,df.z,s=10)
-#     ax[i,2].scatter(df.z,df.y,s=10)
+    ax[i,2].scatter(df.z,df.y,s=10)
 
 def imshow_arr(ax,i,arr,f):
     '''
@@ -84,9 +84,9 @@ def imshow_arr(ax,i,arr,f):
     :param np.fxn f: Numpy function that takes an array and an axis value as parameters, usually np.min or np.max
     '''
 
-#     ax[i,0].imshow(f(arr,axis=0),cmap='Greys')
+    ax[i,0].imshow(f(arr,axis=0),cmap='Greys')
     ax[i,1].imshow(f(arr,axis=1),cmap='Greys')
-#     ax[i,2].imshow(f(arr,axis=2),cmap='Greys')
+    ax[i,2].imshow(f(arr,axis=2),cmap='Greys')
 
 def rotate(df,A):
     '''
@@ -330,8 +330,6 @@ def make_graph(Ldf,Lim=[]):
 
     n = len(Ldf)+len(Lim)
     fig,ax = plt.subplots(n,3,subplot_kw={'aspect':'equal','adjustable':'datalim'},figsize=(12,n*4))
-    
-#     fig,ax = plt.subplots(n,3,figsize=(12,n*4))
 
     for i,d in enumerate(Ldf):
         scatter_df(ax,i,d.sample(frac=0.1))
