@@ -45,8 +45,7 @@ Setting up
 - In the Parameters section, there are several parameters in `param = {}`: `gthresh`, `scale`, `microns`, `mthresh`, `radius`, `comp_order`, `fit_dim`, `deg`. 
 - Adjust `radius` parameter. Adjust radius to 20 for Wild-Type sample and 10 for You-Too sample.
 - Edit `expname` to the name of your test folder.
-      
-      ``` python
+      ```python
       'expname': 'test folder'
       ```
 
