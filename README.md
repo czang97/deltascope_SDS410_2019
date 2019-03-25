@@ -19,7 +19,7 @@ Installation
 	- Download all the packages mentioned in `requirements.txt` using pip package installer. 
 		- For example in order to install `numpy`, use `pip install numpy`.
 	- Go to the working directory of your deltascope folder, install a local project in "editable" mode.
-		- For example, if you stored your deltascope folder on you desktop, and assume the name of your deltascope name is "deltascope", use 
+		- For example, if you stored your deltascope folder on you desktop, and assume the name of your deltascope name is "deltascope"
 		```
 		cd desktop
 		```
@@ -31,12 +31,25 @@ Installation
 		```
   - Download [Anaconda](https://www.anaconda.com/what-is-anaconda/) and launch JupyterLab. You should only be required to interface with the `experiments` folder.
   - We work with Jupyter Notebook files within JupyterLab.
+  - From the left hand side of the panel, open your deltascope folder from home.
+  - In your deltascope folder, open `experiments`.
+  - Create a test folder. If you can't create a folder from Jupyter Notebook, work on your local file. 
+  - Copy all the files in `template` folder into your own test folder, and rename them by removing "template".
+
+Alignment
+------
+- Open `alignment.ipyn`
 
 Setting up
 ------
-
-- Set the kernel to be `deltascope`.
-- Parameters: Wild-Type sample has radius 20; You-Too sample has radius 10.
+- In the Parameters section, there are several parameters in `param = {}`: `gthresh`, `scale`, `microns`, `mthresh`, `radius`, `comp_order`, `fit_dim`, `deg`. 
+- Adjust `radius` parameter. Adjust radius to 20 for Wild-Type sample and 10 for You-Too sample.
+- Edit `expname` to the name of your test folder.
+	- For example 
+	``` python
+	'expname': 'test folder'
+	```
+	
 
 Setting directories
 ------
