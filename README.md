@@ -41,9 +41,18 @@ Reading in the data
 - It will take approximately 30 seconds per sample, and the code prints out how long each iteration takes.
 - If the circle on the top right corner of your Jupyter Notebook file is filled, the computer is working to read in the data. It just takes time.
 
+Functions
+----------
+
+- k: The dictionary key that identifies this sample. It should be the sample number extracted from the filename.
+- df: The dataframe containing datapoints associated with the primary alignment channel, in this case, AT.
+- Ldf: A list of additional dataframes corresponding to other channels in the collection. In this template, we are assuming only one additional channel, ZRF.
+- ax: The format used to present outputs. In our case there are two rows and three columns, 2x3.
+
 Example Alignment
 ------
 
+- *Note that all the code should be run in order--because all the objects for different alignments all have the same names, running the code not in the order it's written will mess up the data.*
 - Four alignment correction options: dotted line is where we want the commissure to be, and solid line is where the commissure in the actual sample is.
 
 ![Types of alignment](/experiments/alignments.png)
@@ -64,6 +73,11 @@ Example Alignment
     - this is a view in the yz plane: we are viewing the parabolic commissure from its side. Since this is a side view of the structure, we would expect it to be lying flat on the teal-colored z-axis, but empirical results have shown that it is the best when the commisure is tilted 50 degrees below the z-axis. Here is an example:
     
 ![tilted 50 360$^\circ$ below z-axis](experiments/testvideo/3_tilted.png)
+
+Finishing up
+-------------
+
+- Click on `File` in the upper left corner of JupyterLab and go down to `Export Notebook As...` and save your output as html. This way the next time you need to check your alignments there is no need to take a long time to read in the data again and run through the entire file.
 
 Support
 ------
