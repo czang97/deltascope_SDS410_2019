@@ -14,14 +14,16 @@ Features
 Installation
 ------
 
-Package hosted on [PyPI](https://pypi.python.org/pypi/deltascope)
-
-	$ pip install deltascope: try running `pip install -e` from the root of the deltascope directory.
+1. Download deltascope folder from Git.
+2. Using the terminal
+	- Download all the packages mentioned in `requirements.txt`.
+	- Go to the working directory of your deltascope folder, then use `pip install -e`.
+  - Download Anaconda and launch JupyterLab. You should only be required to interface with the `experiments` folder.
+  - We work with Jupyter Notebook files within JupyterLab.
 
 Setting up
 ------
 
-- Download Anaconda and launch JupyterLab, then interface with the `experiments` folder.
 - Set the kernel to be `deltascope`.
 - Parameters: Wild-Type sample has radius 20; You-Too sample has radius 10.
 
@@ -37,13 +39,31 @@ Reading in the data
 
 - For personal laptops, please try limiting the maximum amount of data being read in under 10 paired samples (so 20 samples in total).
 - It will take approximately 30 seconds per sample, and the code prints out how long each iteration takes.
+- If the circle on the top right corner of your Jupyter Notebook file is filled, the computer is working to read in the data. It just takes time.
 
-Alignment
+Example Alignment
 ------
 
 - Four alignment correction options: dotted line is where we want the commissure to be, and solid line is where the commissure in the actual sample is.
 
 ![Types of alignment](/experiments/alignments.png)
+
+- Use the corresponding functions within each category to correctly align the samples.
+- The `ut.make_graph(df1,Ldf1)` functions under category C and D are currently not working.
+- In the actual graphs deltascope outputs, the yellow line represents x-axis, red line y-axis and teal line z-axis.
+  - First column
+    - this is a view in the xy plane: we are viewing the parabolic commissure structure from the front. Therefore, we want the commissure to lie flat on x-axis in the final alignment.
+    - The first alignment picture below is how an ideal xy plane view of the commissure should look like: the commissure lies flat on the x-axis. The second alignment picture suggests that there still needs to be some adjustments done: the slightly curved shape formed by the data points suggests that the two tails of the parabolic commissure is probably tilted above the x-axis, so we would want the two tails drop until they align with the x-axis.
+    
+    
+![commissure lying flat on x-axis](experiments/testvideo/1_flat.png)
+![commissure tails tilted above x-axis](experiments/testvideo/1_tilted.png)
+  - Second column
+    - this is a view in the xz plane: we are viewing the commisure from above, and we are able to see the very obvious commissure structure.
+  - Third column
+    - this is a view in the yz plane: we are viewing the parabolic commissure from its side. Since this is a side view of the structure, we would expect it to be lying flat on the teal-colored z-axis, but empirical results have shown that it is the best when the commisure is tilted 50 degrees below the z-axis. Here is an example:
+    
+![tilted 50 360$^\circ$ below z-axis](experiments/testvideo/3_tilted.png)
 
 Support
 ------
