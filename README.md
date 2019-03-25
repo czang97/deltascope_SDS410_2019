@@ -45,9 +45,10 @@ Setting up
 - In the Parameters section, there are several parameters in `param = {}`: `gthresh`, `scale`, `microns`, `mthresh`, `radius`, `comp_order`, `fit_dim`, `deg`. 
 - Adjust `radius` parameter. Adjust radius to 20 for Wild-Type sample and 10 for You-Too sample.
 - Edit `expname` to the name of your test folder.
+      
       ``` python
       'expname': 'test folder'
-       ```
+      ```
 
 Setting directories
 ------
@@ -58,14 +59,16 @@ Setting directories
 - Set root as your cueerent folder
 ```
 root = os.path.abspath('.')
-- All output will be saved in a sample output folder with a time stamp
 ```
+- All output will be saved in a sample output folder with a time stamp
+
 Reading in the data
 ------
-
-- For personal laptops, please try limiting the maximum amount of data being read in under 10 paired samples (so 20 samples in total).
+- Store your data in a data folder under `experiments`. Keep AT data file in one folder and ZRF data in another folder. The data files in your AT folder and your ZRF folder have to match up as pairs. Notice that the data files in your AT and ZRF folder will run at once. 
+- Thus, if you are using personal laptops, please try limiting the amount of data being read at once to about 5 paired samples (so 5 AT data in the AT folder and 5 ZRF data in the ZRF folder).
 - It will take approximately 30 seconds per sample, and the code prints out how long each iteration takes.
 - If the circle on the top right corner of your Jupyter Notebook file is filled, the computer is working to read in the data. It just takes time.
+-`klist` gives you a dicctionary key for your samples. Later, you will need to extract sample by calling the key for your sample.
 
 Functions
 ----------
