@@ -19,7 +19,7 @@ Installation
 	- Download all the packages mentioned in `requirements.txt` using pip package installer. 
 		- For example in order to install `numpy`, use `pip install numpy`.
 	- Go to the working directory of your deltascope folder, install a local project in "editable" mode.
-		- For example, if you stored your deltascope folder on you desktop, use `cd desktop`, and then `cd deltascope`, ```pip install -e .```.
+		- For example, if you stored your deltascope folder on you desktop, and assume the name of your deltascope name is "deltascope", ```cd desktop```  ```cd deltascope``` ```$ pip install -e .```
   - Download Anaconda and launch JupyterLab. You should only be required to interface with the `experiments` folder.
   - We work with Jupyter Notebook files within JupyterLab.
 
