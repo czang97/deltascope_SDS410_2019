@@ -107,6 +107,9 @@ Finishing up
 
 - Click on `File` in the upper left corner of JupyterLab and go down to `Export Notebook As...` and save your output as html. This way the next time you need to check your alignments there is no need to take a long time to read in the data again and run through the entire file.
 
+Complete Sample Procedure
+--------------------------
+
 Support
 ------
 
