@@ -45,19 +45,21 @@ Setting up
 - In the Parameters section, there are several parameters in `param = {}`: `gthresh`, `scale`, `microns`, `mthresh`, `radius`, `comp_order`, `fit_dim`, `deg`. 
 - Adjust `radius` parameter. Adjust radius to 20 for Wild-Type sample and 10 for You-Too sample.
 - Edit `expname` to the name of your test folder.
-	- For example 
-	``` python
-	'expname': 'test folder'
-	```
-	
+      ``` python
+      'expname': 'test folder'
+       ```
 
 Setting directories
 ------
-
+- Reset directory for `gfap` and `at`.
 - For windows users, please use backslashes (e.g., `os.path.abspath(.\SampleNum)`).
 - For mac users, please use normal slashes (e.g., `os.path.abspath(./SampleNum)`).
 - `gfap` corresponds to You-Too data whereas `at` corresponds to Wild-Type data.
-
+- Set root as your cueerent folder
+```
+root = os.path.abspath('.')
+- All output will be saved in a sample output folder with a time stamp
+```
 Reading in the data
 ------
 
