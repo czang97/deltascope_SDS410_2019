@@ -94,7 +94,7 @@ Example Alignment
     - The first alignment picture below is how an ideal xy plane view of the commissure should look like: the commissure lies flat on the x-axis. The second alignment picture suggests that there still needs to be some adjustments done: the slightly curved shape formed by the data points suggests that the two tails of the parabolic commissure is probably tilted above the x-axis, so we would want the two tails drop until they align with the x-axis.
     
     
-![commissure lying flat on x-axis](experiments/testvideo/1_flat.png)
+![commissure lying flat on x-axis](experiments/testvideo/1_flat.png|width=100)
 ![commissure tails tilted above x-axis](experiments/testvideo/1_tilted.png)
   - Second column
     - this is a view in the xz plane: we are viewing the commisure from above, and we are able to see the very obvious commissure structure.
