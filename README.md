@@ -1,7 +1,7 @@
 deltascope
 ===========
 
-This package is designed to quantify biological structures in 3D image data. This do
+This package is designed to quantify biological structures in 3D image data.
 
 Features
 ------
