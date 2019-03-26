@@ -36,9 +36,10 @@ Installation
   - Create a test folder. If you can't create a folder from Jupyter Notebook, work on your local file. 
   - Copy all the files in `template` folder into your own test folder, and rename them by removing "template".
 
-Alignment
+Alignment & Test data
 ------
 - Open `alignment.ipyn`
+- In order for you to follow through this tutorial, there are two test files: `experiments/testvideo/C1` and `experiments/testvideo/C2`. Follow the instructions below to read in those two files and test if your deltascope works properly--C1 contains AT data, and is to be paired with the ZRF data contained in C2.
 
 Setting up
 ------
