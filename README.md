@@ -38,6 +38,12 @@ Installation
 
 Alignment & Test data
 ------
+- Why do we need alignment?
+    - During typical collections of biological samples, each sample will be oriented slightly differently in relation to the
+microscope due to variations in the shape and size of the sample as well as human error during the mounting process.
+As a result of this variation, we cannot directly compare samples in 3D space without realigning them. We have
+implemented principle component analysis in order to automate the process of alignment without a need for human
+supervision.
 - Open `alignment.ipyn`
 - In order for you to follow through this tutorial, there are two test files: `experiments/testvideo/C1` and `experiments/testvideo/C2`. Follow the instructions below to read in those two files and test if your deltascope works properly--C1 contains AT data, and is to be paired with the ZRF data contained in C2.
 
