@@ -14,42 +14,114 @@ Features
 Installation
 ------
 
-Package hosted on [PyPI](https://pypi.python.org/pypi/deltascope)
+1. Download deltascope folder from Git.
+2. Open terminal for installation
+	- Download all the packages mentioned in `requirements.txt` using pip package installer. 
+		- For example in order to install `numpy`, use `pip install numpy`.
+	- Go to the working directory of your deltascope folder, install a local project in "editable" mode.
+		- For example, if you stored your deltascope folder on you desktop, and assume the name of your deltascope name is "deltascope"
+		```
+		cd desktop
+		```
+		```
+		cd deltascope
+		```
+		```
+		pip install -e .
+		```
+  - Download [Anaconda](https://www.anaconda.com/what-is-anaconda/) and launch JupyterLab. You should only be required to interface with the `experiments` folder.
+  - We work with Jupyter Notebook files within JupyterLab.
+  - From the left hand side of the panel, open your deltascope folder from home.
+  - In your deltascope folder, open `experiments`.
+  - Create a test folder. If you can't create a folder from Jupyter Notebook, work on your local file. 
+  - Copy all the files in `template` folder into your own test folder, and rename them by removing "template".
 
-	$ pip install deltascope: try running `pip install -e` from the root of the deltascope directory.
+Alignment & Test data
+------
+- Why do we need alignment?
+    - During typical collections of biological samples, each sample will be oriented slightly differently in relation to the
+microscope due to variations in the shape and size of the sample as well as human error during the mounting process.
+As a result of this variation, we cannot directly compare samples in 3D space without realigning them. We have
+implemented principle component analysis in order to automate the process of alignment without a need for human
+supervision.
+- Open `alignment.ipyn`
+- In order for you to follow through this tutorial, there are two test files: `experiments/testvideo/C1` and `experiments/testvideo/C2`. Follow the instructions below to read in those two files and test if your deltascope works properly--C1 contains AT data, and is to be paired with the ZRF data contained in C2.
 
 Setting up
 ------
-
-- Download Anaconda and launch JupyterLab, then interface with the `experiments` folder.
-- Set the kernel to be `deltascope`.
-- Parameters: Wild-Type sample has radius 20; You-Too sample has radius 10.
+- In the Parameters section, there are several parameters in `param = {}`: `gthresh`, `scale`, `microns`, `mthresh`, `radius`, `comp_order`, `fit_dim`, `deg`. 
+- Adjust `radius` parameter. Adjust radius to 20 for Wild-Type sample and 10 for You-Too sample.
+- Edit `expname` to the name of your test folder.
+      ```python
+      'expname': 'test folder'
+      ```
 
 Setting directories
 ------
-
+- Reset directory for `gfap` and `at`.
 - For windows users, please use backslashes (e.g., `os.path.abspath(.\SampleNum)`).
 - For mac users, please use normal slashes (e.g., `os.path.abspath(./SampleNum)`).
 - `gfap` corresponds to You-Too data whereas `at` corresponds to Wild-Type data.
+- Set root as your cueerent folder
+```
+root = os.path.abspath('.')
+```
+- All output will be saved in a sample output folder with a time stamp
 
 Reading in the data
 ------
-
-- For personal laptops, please try limiting the maximum amount of data being read in under 10 paired samples (so 20 samples in total).
+- Store your data in a data folder under `experiments`. Keep AT data file in one folder and ZRF data in another folder. The data files in your AT folder and your ZRF folder have to match up as pairs. Notice that the data files in your AT and ZRF folder will run at once. 
+- Thus, if you are using personal laptops, please try limiting the amount of data being read at once to about 5 paired samples (so 5 AT data in the AT folder and 5 ZRF data in the ZRF folder).
 - It will take approximately 30 seconds per sample, and the code prints out how long each iteration takes.
+- If the circle on the top right corner of your Jupyter Notebook file is filled, the computer is working to read in the data. It just takes time.
+-`klist` gives you a dicctionary key for your samples. Later, you will need to extract sample by calling the key for your sample.
 
-Alignment
+Functions
+----------
+
+- k: The dictionary key that identifies this sample. It should be the sample number extracted from the filename.
+- df: The dataframe containing datapoints associated with the primary alignment channel, in this case, AT.
+- Ldf: A list of additional dataframes corresponding to other channels in the collection. In this template, we are assuming only one additional channel, ZRF.
+- ax: The format used to present outputs. In our case there are two rows and three columns, 2x3.
+
+Example Alignment
 ------
 
+- *Note that all the code should be run in order--because all the objects for different alignments all have the same names, running the code not in the order it's written will mess up the data.*
 - Four alignment correction options: dotted line is where we want the commissure to be, and solid line is where the commissure in the actual sample is.
 
 ![Types of alignment](/experiments/alignments.png)
+
+- Use the corresponding functions within each category to correctly align the samples.
+- The `ut.make_graph(df1,Ldf1)` functions under category C and D are currently not working.
+- In the actual graphs deltascope outputs, the yellow line represents x-axis, red line y-axis and teal line z-axis.
+  - First column
+    - this is a view in the xy plane: we are viewing the parabolic commissure structure from the front. Therefore, we want the commissure to lie flat on x-axis in the final alignment.
+    - The first alignment picture below is how an ideal xy plane view of the commissure should look like: the commissure lies flat on the x-axis. The second alignment picture suggests that there still needs to be some adjustments done: the slightly curved shape formed by the data points suggests that the two tails of the parabolic commissure is probably tilted above the x-axis, so we would want the two tails drop until they align with the x-axis.
+    
+    
+![commissure lying flat on x-axis](experiments/testvideo/1_flat.png)
+![commissure tails tilted above x-axis](experiments/testvideo/1_tilted.png)
+  - Second column
+    - this is a view in the xz plane: we are viewing the commisure from above, and we are able to see the very obvious commissure structure.
+  - Third column
+    - this is a view in the yz plane: we are viewing the parabolic commissure from its side. Since this is a side view of the structure, we would expect it to be lying flat on the teal-colored z-axis, but empirical results have shown that it is the best when the commisure is tilted 50 degrees below the z-axis. Here is an example:
+    
+![tilted 50 360$^\circ$ below z-axis](experiments/testvideo/3_tilted.png)
+
+Finishing up
+-------------
+
+- Click on `File` in the upper left corner of JupyterLab and go down to `Export Notebook As...` and save your output as html. This way the next time you need to check your alignments there is no need to take a long time to read in the data again and run through the entire file.
+
+Complete Sample Procedure
+--------------------------
 
 Support
 ------
 
 - Complete documentation is available on [Read the Docs](http://deltascope.readthedocs.io/en/latest/).
-- Check out the [Frequently Asked Question <faq>]() page.
+- Check out the [Frequently Asked Questions](https://deltascope.readthedocs.io/en/latest/faq.html) page.
 - Submit an issue describing a problem or question on the project's Github [Issue Tracker](http://github.com/msschwartz21/deltascope/issues).
 
 Contribute
