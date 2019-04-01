@@ -1,0 +1,106 @@
+---
+title: "Cranium"
+author: "CZ"
+date: "3/27/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(gridExtra)
+```
+
+```{r}
+#install.packages("BiocInstaller",
+ #                repos = "http://bioconductor.org/packages/3.5/bioc")
+#source("https://bioconductor.org/biocLite.R")
+#library(BiocInstaller)
+
+
+#library(rhdf5)
+
+```
+
+```{r}
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
+#BiocManager::install("BiocInstaller", version = "3.8")
+
+#BiocInstaller::biocLite("rhdf5")
+
+
+#install.packages("hdf5r")
+
+#library(rhdf5)
+file <- "experiments/data_split/Experiment/AT/AT_wildtype_101_Probabilities.h5"
+
+library(tidyverse)
+library(broom)
+library(rgl)
+
+
+#install.packages("rgl")
+
+
+#install.packages("devtools")
+#library(devtools)
+
+#rhdf5
+#install.packages("rhdf5")
+
+#defaults write org.R-project.R force.LANG en_US.UTF-8
+
+
+#devtools::install_github("beanumber/cranium")
+
+library(cranium)
+```
+
+```{r}
+tidy_brain <- file %>%
+  read_h5() %>%
+  tidy()
+
+#plot3d(tidy_brain)
+
+p1 <- plot2d(tidy_brain)
+
+tidy_brain_ro <- reorient(tidy_brain)
+
+
+p2 <- plot2d(tidy_brain_ro)
+
+grid.arrange(p1, p2, nrow = 2)
+
+#write.csv(tidy_brain, file="tidy_brain.csv")
+```
+
+```{r}
+library(rgl)
+par(mfrow = c(1, 2))
+x <- y <- z <- seq(-4, 4, by = 0.2)
+M <- mesh(x, y, z)
+R <- with (M, sqrt(x^2 + y^2 +z^2))
+p <- sin(2*R)/(R+1e-3)
+slice3D(x, y, z, colvar = p,
+xs = 0, ys = c(-4, 0, 4), zs = NULL)
+isosurf3D(x, y, z, colvar = p, level = 0, col = "red")
+```
+```{r}
+install.packages(c("rgl", "car"))
+library("car")
+scatter3d(x = tidy_brain_ro$x, y = tidy_brain_ro$y, z = tidy_brain_ro$z)
+
+
+```
+
+```{r}
+vignette("hdf5r", package="hdf5r")
+
+test_file <- tempfile(fileext="experiments/data_split/Experiment/AT/AT_wildtype_101_Probabilities.h5")
+
+file.h5 <- H5File$new(test_file, mode="w")
+
+```
+
